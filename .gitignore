@@ -1,0 +1,7 @@
+# Directories
+__pycache__/
+.venv/
+.vscode/
+models_gguf/
+# Files
+colly-tmp

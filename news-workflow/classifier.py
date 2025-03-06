@@ -33,9 +33,6 @@ class Classifier(ABC):
         pass
 
 
-
-
-
 class NewsClassifier(Classifier):
     def __init__(self, system_prompt, user_prompt, runnables):
         super().__init__(system_prompt, user_prompt, runnables)
@@ -56,15 +53,11 @@ if __name__ == "__main__":
     config = read_yaml_config("/Users/mac/Desktop/python-venv/news-workflow/config.yaml")
     system_prompt = config["prompts"]["system_prompt_classifier"]
     user_prompt = config["prompts"]["user_prompt_classifier"]
-
-    
-
     
     from langchain_ollama import ChatOllama
     llm = ChatOllama(model="llama3.2:latest", temperature = 0.7, num_predict = 256,)
     llm_Qwen14 = ChatOllama(model="Qwen2.5:14b", temperature = 0.7,num_predict = 1024,)
     llm_ds14  = ChatOllama( model="deepseek-r1:14b",temperature = 0.7,num_predict = 256,)
-
 
     from category import Category
     structured_llm = llm_ds14.with_structured_output(Category, method="json_schema")

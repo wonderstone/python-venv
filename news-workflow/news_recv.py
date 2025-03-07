@@ -37,7 +37,7 @@ def get_llm(model):
     if model == 'Qwen14':
         llm = ChatOllama(model="Qwen2.5:14b", temperature = 0.7,num_predict = 1024,)
     elif model == 'ds14':
-        llm = ChatOllama( model="deepseek-r1:14b",temperature = 0.7,num_predict = 256,)
+        llm = ChatOllama( model="deepseek-r1:14b",temperature = 0.7,num_predict = 1024,)
     else:
         # 打印提示，返回默认Qwen14
         print("Invalid model. Only 'Qwen14' and 'ds14' are supported. Using 'Qwen14' as default.")

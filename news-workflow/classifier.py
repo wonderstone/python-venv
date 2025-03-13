@@ -42,6 +42,7 @@ class NewsClassifier(Classifier):
         final_prompt = self.system_prompt + self.user_prompt.format(news)
 
         return self.runnables.invoke(final_prompt)
+from langchain.chat_models import init_chat_model
 
 
 if __name__ == "__main__":
